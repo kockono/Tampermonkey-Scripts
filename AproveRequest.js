@@ -13,21 +13,19 @@
     'use strict';
     document.addEventListener('keydown', function(event) {
 
-        // Shorcut Alt + l
-        if (event.altlKey && event.key === 'a') {
+        // Shorcut Ctrl + a
+        if (event.ctrlKey && event.key === 'a') {
+            // setTimeout(function() {
+                // Guardar boton aprove
+              //  const aproveButton = document.querySelector('.btn.btn-primary.btn-sm.ml-2');
+              //  aproveButton.click();
+
+            // }, 250); // 250 es el tiempo en milisegundos (0.25 segundos)
 
             setTimeout(function() {
                 // Guardar boton aprove
-                const aproveButton = document.querySelector('.btn.btn-primary.btn-sm.ml-2');
-                aproveButton.click();
-
-            }, 250); // 250 es el tiempo en milisegundos (0.25 segundos)
-
-            setTimeout(function() {
-                // Guardar boton aprove
-                const reviewButton = document.querySelectorAll('.js-review-changes');
+                const reviewButton = document.querySelector('.js-review-changes');
                 reviewButton.click();
-
             }, 500); // 500 es el tiempo en milisegundos (0.5 segundos)
 
             setTimeout(function() {
@@ -36,8 +34,12 @@
             }, 750); // 750 es el tiempo en milisegundos (0.75 segundos)
 
            setTimeout(function() {
-               const spanElement = document.querySelector('span.Button-label');
-               spanElement.click();
+               const spanElements = document.querySelectorAll('span.Button-label');
+               for(let i = 0; i <= spanElements.length; i++) {
+                   if(spanElements[i].innerHTML == 'Submit review') {
+                    spanElements[i].click();
+                   }
+               }
             }, 1000); // 1000 es el tiempo en milisegundos (1.0 segundos)
 
 
